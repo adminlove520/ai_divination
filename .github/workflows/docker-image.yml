@@ -50,4 +50,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.REGISTRY }}/adminlove520/ai_Divination:latest
+            ${{ env.REGISTRY }}/adminlove520/ai_divination:latest
