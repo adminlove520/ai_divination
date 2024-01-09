@@ -49,5 +49,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/dreamhunter2333/chatgpt-tarot-divination:${{ steps.get_version.outputs.VERSION }}
-            ghcr.io/dreamhunter2333/chatgpt-tarot-divination:latest
+            ghcr.io/SweatRose/AI_Divination/:${{ steps.get_version.outputs.VERSION }}
+            ghcr.io/SweatRose/AI_Divination/:latest
