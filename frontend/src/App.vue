@@ -48,19 +48,20 @@ onMounted(async () => {
       <n-gi span="4">
         <div class="main">
           <n-space vertical>
-            <h2>AI 占卜 - 本项目仅供娱乐</h2>
+            <h2>AI 占卜</h2>
             <n-layout>
               <n-alert v-if="settings.user_name" type="success">
-                你好, {{ settings.login_type }} 用户 {{ settings.user_name }}
+                <!-- 你好, {{ settings.login_type }} 用户 {{ settings.user_name }} -->
+                你好,{{ settings.user_name }}
                 <n-button tertiary type="primary" round @click="logOut">登出</n-button>
                 <n-button tag="a" target="_blank" tertiary type="primary" round
-                  href="https://github.com/dreamhunter2333/chatgpt-tarot-divination">☆ Github</n-button>
+                  href="https://github.com/adminlove520">☆ Github</n-button>
               </n-alert>
               <n-alert v-else type="warning">
                 当前未登录, 处于限流模式 ({{ settings.rate_limit }})
                 <n-button type="warning" round @click="router.push('/login')">登录</n-button>
                 <n-button tag="a" target="_blank" tertiary type="primary" round
-                  href="https://github.com/dreamhunter2333/chatgpt-tarot-divination">☆ Github</n-button>
+                  href="https://github.com/adminlove520">☆ Github</n-button>
               </n-alert>
               <n-layout>
                 <router-view></router-view>
