@@ -22,7 +22,7 @@
 ```yaml
 services:
   chatgpt-tarot-divination:
-    image: ghcr.io/dreamhunter2333/chatgpt-tarot-divination:latest
+    image: ghcr.io/adminlove520/ai_divination:latest
     container_name: chatgpt-tarot-divination
     restart: always
     ports:
