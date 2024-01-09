@@ -51,5 +51,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/SweatRose/AI_Divination:${{ steps.get_version.outputs.VERSION }}
-            ghcr.io/SweatRose/AI_Divination:latest
+            ghcr.io/adminlove520/AI_Divination:${{ steps.get_version.outputs.VERSION }}
+            ghcr.io/adminlove520/AI_Divination:latest
