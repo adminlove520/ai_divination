@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Get version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
       - uses: actions/checkout@v3
 
       - name: Install Node.js
@@ -50,5 +50,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/adminlove520/ai_divination:${{ steps.get_version.outputs.VERSION }}
+            ghcr.io/adminlove520/ai_divination:${{ steps.get_version.outputs.version }}
             ghcr.io/adminlove520/ai_divination:latest
