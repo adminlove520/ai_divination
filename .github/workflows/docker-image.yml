@@ -50,5 +50,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.REGISTRY }}/adminlove520/ai_divination:${{ steps.get_version.outputs.VERSION }}
             ${{ env.REGISTRY }}/adminlove520/ai_Divination:latest
