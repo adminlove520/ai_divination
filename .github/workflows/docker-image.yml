@@ -2,6 +2,8 @@ name: Docker Image Build
 
 on:
   push:
+    branches:
+      - main
     tags:
       - "*"
 env:
