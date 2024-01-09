@@ -10,28 +10,13 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
-jobs:
-  get-tags:
-    runs-on: ubuntu-20.04
-    env:
-      TZ: Asia/Shanghai
-    outputs:
-      tags: ${{ steps.set-output-id.outputs.tags }}
-    steps:
-      - uses: actions/checkout@v2
-      - name: set-output
-        id: set-output-id
-        run: |
-          VERSION=edge
-          if [[ $GITHUB_REF == refs/tags/* ]]; then
-            VERSION=${GITHUB_REF#refs/tags/v}
-          fi
-          echo ::set-output name=tags::${VERSION} 
+jobs: 
   build-and-push-image:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
+  
     steps:
       - name: Install Node.js
         uses: actions/setup-node@v3
@@ -57,7 +42,24 @@ jobs:
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v4
-        with:
+
+  get-tags:
+      runs-on: ubuntu-20.04
+      env:
+        TZ: Asia/Shanghai
+      outputs:
+        tags: ${{ steps.set-output-id.outputs.tags }}
+      steps:
+      - uses: actions/checkout@v2
+      - name: set-output
+        id: set-output-id
+        run: |
+          VERSION=edge
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/v}
+          fi
+          echo ::set-output name=tags::${VERSION}
+          with:
           context: .
           push: true
           tags: |
