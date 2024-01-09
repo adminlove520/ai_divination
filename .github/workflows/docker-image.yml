@@ -50,5 +50,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io//adminlove520/ai_divination:${{ steps.get_version.outputs.VERSION }}
-            ghcr.io//adminlove520/ai_divination:latest
+            ghcr.io/adminlove520/ai_divination:${{ steps.get_version.outputs.VERSION }}
+            ghcr.io/adminlove520/ai_divination:latest
